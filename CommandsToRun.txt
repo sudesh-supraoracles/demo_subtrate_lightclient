@@ -1,0 +1,74 @@
+
+=> fOR alice node :
+./target/release/node-template --base-path /tmp/alice --chain local --alice --port 30333 --ws-port 9945 --rpc-port 9933 --node-key 0000000000000000000000000000000000000000000000000000000000000001 --telemetry-url 'wss://telemetry.polkadot.io/submit/ 0'--validator
+  
+ => For Bob's Node:
+./target/release/node-template --base-path /tmp/bob --chain local --bob --port 30334 --ws-port 9946 --rpc-port 9934 --telemetry-url 'wss://telemetry.polkadot.io/submit/ 0' --validator --bootnodes /ip4/127.0.0.1/tcp/30333/p2p/12D3KooWEyoppNCUx8Yx66oV9fJnriXwCcXwDDUA2kj6vnc6iDEp
+
+
+# start node01
+./target/release/node-template --base-path /tmp/node01  --chain ./customSpecRaw.json  --port 30333  --ws-port 9945  --rpc-port 9933  --telemetry-url 'wss://telemetry.polkadot.io/submit/ 0'  --validator  --rpc-methods Unsafe  --name MyNode01
+
+# start node02
+./target/release/node-template  --base-path /tmp/node02  --chain ./customSpecRaw.json  --port 30334  --ws-port 9946  --rpc-port 9934  --telemetry-url 'wss://telemetry.polkadot.io/submit/ 0'  --validator  --rpc-methods Unsafe  --name MyNode02  --bootnodes /ip4/127.0.0.1/tcp/30333/p2p/12D3KooWMbAeLFbXdMdacga2LJbDSe4f41vGfKNna2a1rLV5zx5y
+
+# start node03
+./target/release/node-template  --base-path /tmp/node03  --chain ./customSpecRaw.json  --port 30335  --ws-port 9947  --rpc-port 9935  --telemetry-url 'wss://telemetry.polkadot.io/submit/ 0'  --validator  --rpc-methods Unsafe  --name MyNode03  --light  --bootnodes /ip4/127.0.0.1/tcp/30333/p2p/12D3KooWMbAeLFbXdMdacga2LJbDSe4f41vGfKNna2a1rLV5zx5y
+
+For Node- 1:
+AURA:
+PS F:\Solidity Projects\substrate-node-template> subkey generate --scheme sr25519
+Secret phrase `pact ask depth wealth solid illegal fee assault gaze upper table fame` is account:
+  Secret seed:       0x7697cf53d967a13baa0ca504914250e0af37232611702b94c19c7a921ebd58f1
+  Public key (hex):  0xa286dc47cabaff395298a41c3cf2128a320a5f58280a0c9f314f4712a112135c
+  Public key (SS58): 5FjogBhRUqwqdmRioAGGMEuqiC346NqynacvpJHcFg3z4gMk
+  Account ID:        0xa286dc47cabaff395298a41c3cf2128a320a5f58280a0c9f314f4712a112135c
+  SS58 Address:      5FjogBhRUqwqdmRioAGGMEuqiC346NqynacvpJHcFg3z4gMk
+  
+ GRANDPA:
+ PS F:\Solidity Projects\substrate-node-template> subkey inspect --scheme ed25519 "pact ask depth wealth solid illegal fee assault gaze upper table fame"
+Secret phrase `pact ask depth wealth solid illegal fee assault gaze upper table fame` is account:
+  Secret seed:       0x7697cf53d967a13baa0ca504914250e0af37232611702b94c19c7a921ebd58f1
+  Public key (hex):  0xd08f0ce44318ba0b367ff0365a5df0f40a06b572fbedeee7602e41dc915fe292
+  Public key (SS58): 5GnAK3rqpaytkRMz1ehFYw415QceYUsAtuFM8e1BGvmutTgx
+  Account ID:        0xd08f0ce44318ba0b367ff0365a5df0f40a06b572fbedeee7602e41dc915fe292
+  SS58 Address:      5GnAK3rqpaytkRMz1ehFYw415QceYUsAtuFM8e1BGvmutTgx
+  
+  
+  For Node- 2:
+  AURA:
+  Secret phrase `law curious donkey pole amount meat gasp slogan boat divert usual call` is account:
+  Secret seed:       0xb66793be9d9e6634b3e587a68f22f5386c81b34ebadc71127e195e7852fd34a6
+  Public key (hex):  0xe4e41a3ae434fa40a721d70c9cd4efde9910c226ed9af02ca027c9af2287a204
+  Public key (SS58): 5HEpY1XsU8wxtq5a1wMdmbHKK41JBcKno2JozQH15aaqxyty
+  Account ID:        0xe4e41a3ae434fa40a721d70c9cd4efde9910c226ed9af02ca027c9af2287a204
+  SS58 Address:      5HEpY1XsU8wxtq5a1wMdmbHKK41JBcKno2JozQH15aaqxyty
+  
+  GRANDPA:
+  Secret phrase `law curious donkey pole amount meat gasp slogan boat divert usual call` is account:
+  Secret seed:       0xb66793be9d9e6634b3e587a68f22f5386c81b34ebadc71127e195e7852fd34a6
+  Public key (hex):  0x7476e9a5f80becb33d82eb96f45e83e60ca13fdfc45ad8c8e15ea1ff07ec62a9
+  Public key (SS58): 5EhQjewagAZTxDXt4gTg159cHNpPH78g7xgtXVikGfuvkvKa
+  Account ID:        0x7476e9a5f80becb33d82eb96f45e83e60ca13fdfc45ad8c8e15ea1ff07ec62a9
+  SS58 Address:      5EhQjewagAZTxDXt4gTg159cHNpPH78g7xgtXVikGfuvkvKa
+  
+  For Node-3 :
+  AURA:
+  Secret phrase `maple can moral denial can vivid pact sea farm help shallow lab` is account:
+  Secret seed:       0xaa0950978ce643ae3613551ae99cb03f681ba681fa6f0eb57461d9a75b323638
+  Public key (hex):  0x10ea90b774febfcb41a61fee609d7952ed1c9a7017b8d11d9104698d390d6019
+  Public key (SS58): 5CStJa7hzBy7sXgnDGq9mtTcb295HouVSRah9k3423gZsZSo
+  Account ID:        0x10ea90b774febfcb41a61fee609d7952ed1c9a7017b8d11d9104698d390d6019
+  SS58 Address:      5CStJa7hzBy7sXgnDGq9mtTcb295HouVSRah9k3423gZsZSo
+  
+  GRANDPA:
+  Secret phrase `maple can moral denial can vivid pact sea farm help shallow lab` is account:
+  Secret seed:       0xaa0950978ce643ae3613551ae99cb03f681ba681fa6f0eb57461d9a75b323638
+  Public key (hex):  0x642177b8034eae242822af894c276e57d184b865d7c48b01638ed8db4bcdb77b
+  Public key (SS58): 5EKzb2wUH123UJyMkgx8ZESynByQpFXZcYVSxV9odcaGRHPN
+  Account ID:        0x642177b8034eae242822af894c276e57d184b865d7c48b01638ed8db4bcdb77b
+  SS58 Address:      5EKzb2wUH123UJyMkgx8ZESynByQpFXZcYVSxV9odcaGRHPN
+  
+  
+  
+  
