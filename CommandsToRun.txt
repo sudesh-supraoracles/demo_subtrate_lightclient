@@ -1,3 +1,5 @@
+=> # purge chain (only required for new/modified dev chain spec)
+./target/release/node-template purge-chain --base-path /tmp/node01 --chain local -y
 
 => fOR alice node :
 ./target/release/node-template --base-path /tmp/alice --chain local --alice --port 30333 --ws-port 9945 --rpc-port 9933 --node-key 0000000000000000000000000000000000000000000000000000000000000001 --telemetry-url 'wss://telemetry.polkadot.io/submit/ 0'--validator
@@ -15,9 +17,9 @@
 # start node03
 ./target/release/node-template  --base-path /tmp/node03  --chain ./customSpecRaw.json  --port 30335  --ws-port 9947  --rpc-port 9935  --telemetry-url 'wss://telemetry.polkadot.io/submit/ 0'  --validator  --rpc-methods Unsafe  --name MyNode03  --light  --bootnodes /ip4/127.0.0.1/tcp/30333/p2p/12D3KooWMbAeLFbXdMdacga2LJbDSe4f41vGfKNna2a1rLV5zx5y
 
-For Node- 1:
+Keys For Node- 1:
 AURA:
-PS F:\Solidity Projects\substrate-node-template> subkey generate --scheme sr25519
+
 Secret phrase `pact ask depth wealth solid illegal fee assault gaze upper table fame` is account:
   Secret seed:       0x7697cf53d967a13baa0ca504914250e0af37232611702b94c19c7a921ebd58f1
   Public key (hex):  0xa286dc47cabaff395298a41c3cf2128a320a5f58280a0c9f314f4712a112135c
@@ -26,7 +28,7 @@ Secret phrase `pact ask depth wealth solid illegal fee assault gaze upper table 
   SS58 Address:      5FjogBhRUqwqdmRioAGGMEuqiC346NqynacvpJHcFg3z4gMk
   
  GRANDPA:
- PS F:\Solidity Projects\substrate-node-template> subkey inspect --scheme ed25519 "pact ask depth wealth solid illegal fee assault gaze upper table fame"
+
 Secret phrase `pact ask depth wealth solid illegal fee assault gaze upper table fame` is account:
   Secret seed:       0x7697cf53d967a13baa0ca504914250e0af37232611702b94c19c7a921ebd58f1
   Public key (hex):  0xd08f0ce44318ba0b367ff0365a5df0f40a06b572fbedeee7602e41dc915fe292
@@ -35,7 +37,7 @@ Secret phrase `pact ask depth wealth solid illegal fee assault gaze upper table 
   SS58 Address:      5GnAK3rqpaytkRMz1ehFYw415QceYUsAtuFM8e1BGvmutTgx
   
   
-  For Node- 2:
+ Keys For Node- 2:
   AURA:
   Secret phrase `law curious donkey pole amount meat gasp slogan boat divert usual call` is account:
   Secret seed:       0xb66793be9d9e6634b3e587a68f22f5386c81b34ebadc71127e195e7852fd34a6
@@ -52,7 +54,7 @@ Secret phrase `pact ask depth wealth solid illegal fee assault gaze upper table 
   Account ID:        0x7476e9a5f80becb33d82eb96f45e83e60ca13fdfc45ad8c8e15ea1ff07ec62a9
   SS58 Address:      5EhQjewagAZTxDXt4gTg159cHNpPH78g7xgtXVikGfuvkvKa
   
-  For Node-3 :
+  Keys For Node-3 :
   AURA:
   Secret phrase `maple can moral denial can vivid pact sea farm help shallow lab` is account:
   Secret seed:       0xaa0950978ce643ae3613551ae99cb03f681ba681fa6f0eb57461d9a75b323638
